@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cmd3mxqvf5drw"]
+
+[ext_resource type="Script" uid="uid://co7ojcscmy6v4" path="res://personagem.gd" id="1_kxg5b"]
+
+[node name="Jogo" type="Node2D" unique_id=303695612]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=255831875]
+offset_right = 79.0
+offset_bottom = 71.0
+
+[node name="Personagem" type="CharacterBody2D" parent="." unique_id=81952433]
+script = ExtResource("1_kxg5b")
+
+[node name="Imagem" type="Sprite2D" parent="Personagem" unique_id=1395127896]
