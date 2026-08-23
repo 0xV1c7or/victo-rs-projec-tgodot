@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://d0d3n68s8wabo"]
+
+[ext_resource type="Script" uid="uid://hxsp617al8ub" path="res://player.gd" id="1_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://dnkn4dk1cdi6y" path="res://assetpack/parallax/moon/moon_sky.png" id="1_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://ci2yms6x118wd" path="res://assetpack/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://u25i6ivhnb81" path="res://assetpack/parallax/moon/moon_earth.png" id="2_vef74"]
+[ext_resource type="Texture2D" uid="uid://dfe17hhegig8i" path="res://assetpack/parallax/moon/moon_back.png" id="3_hve3p"]
+[ext_resource type="Texture2D" uid="uid://ddfryw6u17esp" path="res://assetpack/parallax/moon/moon_mid.png" id="4_mfdv2"]
+[ext_resource type="Texture2D" uid="uid://cgbeha7dpuqku" path="res://assetpack/parallax/moon/moon_front.png" id="5_iotsf"]
+[ext_resource type="Texture2D" uid="uid://djlhiu54fg2xp" path="res://assetpack/parallax/moon/moon_floor.png" id="6_lc2xo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc0e3"]
+atlas = ExtResource("2_feb5d")
+region = Rect2(0, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jktm"]
+atlas = ExtResource("2_feb5d")
+region = Rect2(350, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryrav"]
+atlas = ExtResource("2_feb5d")
+region = Rect2(700, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eow3j"]
+atlas = ExtResource("2_feb5d")
+region = Rect2(1050, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5wjh"]
+atlas = ExtResource("2_feb5d")
+region = Rect2(1400, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vef74"]
+atlas = ExtResource("2_feb5d")
+region = Rect2(1750, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
+atlas = ExtResource("2_feb5d")
+region = Rect2(2100, 0, 350, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jktm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryrav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eow3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5wjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vef74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hve3p")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D" unique_id=1782314022]
+
+[node name="MoonSky" type="Sprite2D" parent="." unique_id=182725153]
+position = Vector2(576, 324)
+scale = Vector2(0.6063158, 0.648)
+texture = ExtResource("1_j5wjh")
+
+[node name="MoonEarth" type="Sprite2D" parent="." unique_id=282018199]
+position = Vector2(1032, 208)
+scale = Vector2(0.31934217, 0.30949998)
+texture = ExtResource("2_vef74")
+
+[node name="MoonBack" type="Sprite2D" parent="." unique_id=51402626]
+position = Vector2(576, 324)
+scale = Vector2(0.30315787, 0.64799994)
+texture = ExtResource("3_hve3p")
+
+[node name="MoonMid" type="Sprite2D" parent="." unique_id=1870425067]
+position = Vector2(575.99994, 324)
+scale = Vector2(0.30315787, 0.648)
+texture = ExtResource("4_mfdv2")
+
+[node name="MoonFront" type="Sprite2D" parent="." unique_id=1864751122]
+position = Vector2(576, 323.99997)
+scale = Vector2(0.30315793, 0.648)
+texture = ExtResource("5_iotsf")
+
+[node name="MoonFloor" type="Sprite2D" parent="." unique_id=176587318]
+position = Vector2(575.99994, 323.5)
+scale = Vector2(0.60631573, 0.6469999)
+texture = ExtResource("6_lc2xo")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1760162739]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_e2o6t")
+
+[node name="ImagemPlayer" type="AnimatedSprite2D" parent="Player" unique_id=750966843]
+position = Vector2(264, 642)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+frame = 4
+frame_progress = 0.49882048
